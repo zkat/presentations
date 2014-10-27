@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <body>
+
+    <!-- Templates -->
+    <script id=main type=text/stache>
+      <h3>Current Position: {{#with currentPosition}}({{x}}, {{y}}){{/with}}</h3>
+      <h3>Latest clicks</h3>
+      <ul>
+        {{#each latestClicks}}
+        <li>({{x}},{{y}})
+        {{/each}}
+      </ul>
+    </script>
+    
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//canjs.com/release/2.1.2/can.jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.18/Bacon.min.js"></script>
+    <script src="https://rawgit.com/zkat/bacon-browser/master/dist/bacon-browser.js"></script>
+    <script src="https://rawgit.com/zkat/can.bacon/master/dist/can.bacon.js"></script>
+    <script src="clicks.js"></script>
+
+  </body>
+</html>

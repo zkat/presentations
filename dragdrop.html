@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      drag-drop-demo {
+        display: block;
+        position: relative;
+        height: 500px;
+        width: 500px;
+        border: 1px solid black;
+      }
+      drag-drop-demo .draggable-box {
+        display: block;
+        position: absolute;
+        height: 100px;
+        width: 100px;
+        background-color: hotpink;
+        cursor: pointer;
+        text-align: center;
+        line-height: 100px;
+      }
+      .drag-drop-demo-dragging {
+	    -webkit-touch-callout: none;
+	    -webkit-user-select: none;
+	    -khtml-user-select: none;
+	    -moz-user-select: none;
+	    -ms-user-select: none;
+	    user-select: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Templates -->
+    <script id=main type=text/stache>
+      <drag-drop-demo></drag-drop-demo>
+    </script>
+
+    <script id=drag-drop-demo-tpl type=text/stache>
+      <div class=draggable-box style="left: {{boxPosition.x}}px; top: {{boxPosition.y}}px">
+        ({{boxPosition.x}},{{boxPosition.y}})
+      </div>
+    </script>
+    
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//canjs.com/release/2.1.2/can.jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.18/Bacon.min.js"></script>
+    <script src="https://rawgit.com/zkat/bacon-browser/master/dist/bacon-browser.js"></script>
+    <script src="https://rawgit.com/zkat/can.bacon/master/dist/can.bacon.js"></script>
+    <script src="dragdrop.js"></script>
+
+  </body>
+</html>

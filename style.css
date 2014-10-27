@@ -1,0 +1,25 @@
+#slide-3 h1 {
+    color: #885f01 !important;
+}
+
+#slide-3 h2 {
+    color: hotpink !important;
+}
+
+#slide-4 {
+    background: url("why.jpg") no-repeat left;
+}
+
+#slide-5 {
+    background: url("how.jpg") no-repeat right;
+}
+
+#slide-6 {
+    background: url("discus.jpg");
+    background-size: cover;
+    color: hotpink !important;
+}
+
+#slide-8 {
+    background: url("youkeepusingthatword.jpg") no-repeat left;
+}
