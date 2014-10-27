@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+  <body>
+
+    <!-- Templates -->
+    <script id=main type=text/stache>
+      <ul>
+        {{#each user}}
+        <li>{{@key}}: {{.}}
+        {{/each}}
+      </ul>
+      <h3>Changes:</h3>
+      <ul>
+        {{#each changeLog}}
+        <li>{{.}}
+        {{/each}}
+      </ul>
+    </script>
+    
+    <!-- Scripts -->
+    <script src="http://code.jquery.com/jquery-2.1.1.js"></script>
+    <script src="//canjs.com/release/2.1.2/can.jquery.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bacon.js/0.7.18/Bacon.min.js"></script>
+    <script src="https://rawgit.com/zkat/bacon-browser/master/dist/bacon-browser.js"></script>
+    <script src="https://rawgit.com/zkat/can.bacon/master/dist/can.bacon.js"></script>
+    <script src="statestream.js"></script>
+
+  </body>
+</html>

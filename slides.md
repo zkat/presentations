@@ -1,68 +1,79 @@
-title: YYCjs Slides
+title: Hooray!
 output: index.html
-theme: theme
 controls: false
-logo: theme/logo.png
+theme: jdan/cleaver-retro
+style: style.css
 
 --
 
-# YYC.js Presents:
+# Hooray!
 
-## An Epic Slide Template
-
-### That totally kicks some ass
-
-#### Kind of like Chuck Norris
-
-##### And Jackie Chan
-
-Maybe even Chris Rock
+Three talks about things Kat got asked to talk about
 
 --
 
-# Brought to you by
+### Topics
 
--- presenter
+* Hooray! Your Code Sucks!
 
-![David Luecke](http://gravatar.com/avatar/a14850281f19396480bdba4aab2d52ef?s=200)
+* Hooray! Your Event Handling Sucks!
 
-## David Luecke
-
-* [<i class="fa fa-github"></i> daffl](https://github.com/daffl)
-* [<i class="fa fa-twitter"></i> @daffl](http://twitter.com/daffl)
-
--- presenter
-
-![Eric Kryski](http://gravatar.com/avatar/23aba778a7daae99348aeb0728cf4aec?s=200)
-
-## Eric Kryski
-
-* [<i class="fa fa-github"></i> ekryski](https://github.com/ekryski)
-* [<i class="fa fa-twitter"></i> @ekryski](http://twitter.com/ekryski)
-* [<i class="fa fa-home"></i> erickryski.com](http://erickryski.com)
-
--- sponsors
-
-# Our Sponsors
-
-![Assembly](img/sponsors/assembly_logo.png)
-
-![Village Brewery](img/sponsors/village_brewery_logo.png)
-
-![Startup Calgary](img/sponsors/startup_calgary_logo.png)
-
-![PetroFeed](img/sponsors/petrofeed_logo.png)
+* <strike>Hooray! It's like the Jetsons!</strike>
 
 --
 
-# Last Month
+# Your Code Sucks!
 
-* Something awesome
-* More awesomeness
+## Hooray!
+
+An overview of GBI's code review process, and why everyone benefits when we
+read each other's code.
 
 --
 
-# Next Month
+* Normalizes application style
+* Makes everyone pay more attention to detail
+* More knowledge sharing between team (general and project-specific)
+* Oleg Protection
+* Everyone will make a mistake at some point. **Everyone**
 
-* Something awesome
-* More awesomeness
+--
+
+* Make it a habit, not an event
+* Keep code in branches!
+* Always review -- require a +1
+* Nitpick on others and ignore it when others do it
+* Run the code at least once
+* Ask questions, instead of accusing
+* Stay on topic
+* Review process is developed as a team
+
+--
+
+# Discuss
+
+--
+
+# Your Event Handling Sucks!
+## Hooray!
+
+FRP is the future. Everyone is excited about
+[can.bacon](https://github.com/zkat/can.bacon)! Don't miss the bandwagon!
+
+--
+
+### Open up these links for reference!
+
+* https://github.com/baconjs/bacon.js
+* https://github.com/zkat/can.bacon
+* https://github.com/zkat/bacon-browser
+
+--
+
+### It's not just for that thing you keep saying it's for
+
+* [Turning events into observable app state](clicks.html)
+* [Processing and transforming websocket data](statestream.html)
+* [Complex event interactions such as dragging](drag.html)
+* More stuff that Kat won't code at 3am
+
