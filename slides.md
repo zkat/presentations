@@ -1,4 +1,4 @@
-title: Hooray!
+title: can.eventstream, and you can, too!
 output: index.html
 controls: false
 theme: jdan/cleaver-retro
@@ -6,74 +6,81 @@ style: style.css
 
 --
 
-# Hooray!
+# can.eventstream
 
-Three talks about things Kat got asked to talk about
+And you can, too!
 
 --
 
 ### Topics
 
-* Hooray! Your Code Sucks!
+* What are eventstreams?
 
-* Hooray! Your Event Handling Sucks!
+* How are they coming to CanJS?
 
-* <strike>Hooray! It's like the Jetsons!</strike>
-
---
-
-# Your Code Sucks!
-
-## Hooray!
-
-An overview of GBI's code review process, and why everyone benefits when we
-read each other's code.
+* What can I do with them?
 
 --
 
-* Normalizes application style
-* Makes everyone pay more attention to detail
-* More knowledge sharing between team (general and project-specific)
-* Oleg Protection
-* Everyone will make a mistake at some point. **Everyone**
+### So what are they?
+
+* Abstraction over event bindings
+* Composable
+* Reusable
+* Declarative
 
 --
 
-* Make it a habit, not an event
-* Keep code in branches!
-* Always review -- require a +1
-* Nitpick on others and ignore it when others do it
-* Run the code at least once
-* Ask questions, instead of accusing
-* Stay on topic
-* Review process is developed as a team
+### Standard event binding
+
+```js
+var clicks = can.compute();
+$(window).on("click", () => clicks(clicks()+1));
+clicks.bind("change", (one, two, three, bingo) => $("#clickcount").text(bingo));
+```
 
 --
 
-# Discuss
+### With event streams
 
+```js
+var clickStream = $(window).toEventStream("click");
+var clicks = clickStream.scan(0, acc => acc+1);
+clicks.assign($("#clickcount"), "text");
+```
 --
 
-# Your Event Handling Sucks!
-## Hooray!
+### Reuse them!
 
-FRP is the future. Everyone is excited about
-[can.bacon](https://github.com/zkat/can.bacon)! Don't miss the bandwagon!
+```js
+// Go ahead and add logs elsewhere, anywhere.
+clickStream.log("Window got a click");
+clicks.filter(x => !(x%2)).log("clicked even number of times");
 
+// And use the streams elsewhere...
+import {clicks} from "mylib";
+
+can.Component.extend({
+...
+   inserted: function() {
+      clicks.filter(x => x % 2).assign(this.scope, "oddClicks");
+   }
+...
+});
+```
 --
 
-### Open up these links for reference!
-
-* https://github.com/baconjs/bacon.js
-* https://github.com/zkat/can.bacon
-* https://github.com/zkat/bacon-browser
-
---
-
-### It's not just for that thing you keep saying it's for
+### When should I use them?
 
 * [Turning events into observable app state](clicks.html)
 * [Processing and transforming websocket data](statestream.html)
-* [Complex event interactions such as dragging](drag.html)
-* More stuff that Kat won't code at 3am
+* [Complex event interactions without state machines](drag.html)
+* [Live data structures](can.dataview.html)
+* Cross-binding CanJS data structures to each other
+* Recreating event "stacks" for debugging
 
+### Links
+
+* https://github.com/bitovi/can.bacon
+* https://github.com/baconjs/bacon.js
+* https://github.com/zkat/bacon-browser
